@@ -1,0 +1,20 @@
+baseURL = "http://research-note.github.io/"
+languageCode = "ko-kr"
+title = "Paran Lee's Hugo Site"
+theme = "reveal-hugo"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+enableRobotsTXT = true
+
+[sitemap]
+changefreq = "weekly"
+filename = "sitemap.xml"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[outputFormats.Reveal]
+baseName = "index"
+mediaType = "text/html"
+isHTML = true
