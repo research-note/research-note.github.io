@@ -5,6 +5,15 @@
     <loc>http://research-note.github.io/categories/</loc>
     <changefreq>weekly</changefreq>
   </url><url>
+    <loc>http://research-note.github.io/linux-kernel/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://research-note.github.io/many-as-one/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://research-note.github.io/linux-kernel/mm/memory-compaction/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>http://research-note.github.io/</loc>
     <changefreq>weekly</changefreq>
   </url><url>
