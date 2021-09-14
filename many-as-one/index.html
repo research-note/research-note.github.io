@@ -20,14 +20,14 @@
   
 
     <section><h1 id="many-as-one">Many as One</h1>
-<p>매니코어SW 지정과제 <a href="https://github.com/sshekh/conv-filters">순차처리 합성곱 필터 알고리즘</a>을 <a href="https://github.com/research-note/Many-as-One/tree/master/nn/conv-filters">병렬처리 알고리즘</a>으로 마이그레이션 했습니다.</p>
+<p>매니코어SW 지정과제 <a href="https://github.com/sshekh/conv-filters">순차처리 합성곱 필터 알고리즘</a>을 <a href="https://github.com/research-note/Many-as-One/tree/master/nn/conv-filters">병렬처리 알고리즘</a>으로 재구현 했습니다.</p>
 <p>해당 모듈은 <code>여럿이 모여 하나</code> 프로젝트에 이미지 모듈에 추가하고 지속적 개선을 진행합니다.</p>
 </section><section>
-<h2 id="many-as-one-contd">Many as One (cont&rsquo;d)</h2>
+<h4 id="many-as-one-contd">Many as One (cont&rsquo;d)</h4>
 <p><code>여럿이 모여 하나</code>는 인공 신경망 코어 프레임워크를 구현합니다.</p>
 <p>일반적인 <code>Python</code> 신경망 프레임워크 + <code>numpy</code> (GPU 컴퓨팅 + 싱글스레드 CPU와 UMA 기반)와 차이점이 있습니다.</p>
 </section><section>
-<h2 id="many-as-one-contd-1">Many as One (cont&rsquo;d)</h2>
+<h4 id="many-as-one-contd-1">Many as One (cont&rsquo;d)</h4>
 <p><code>여럿이 모여 하나</code>는 매니코어 병렬 처리에 대응하기위해</p>
 <ul>
 <li>C++17, C++20에서 추가하고 있는 TBB(Thread Building Blocks)기반의 표준을 활용합니다.</li>
@@ -36,25 +36,25 @@
 <p><img src="./README/SYCL_logo.svg.png" alt="">
 <img src="./README/Eigen_Silly_Professor_135x135.png" alt=""></p>
 </section><section>
-<h2 id="many-as-one-1">Many as One</h2>
+<h4 id="many-as-one-1">Many as One</h4>
 <ul>
 <li><code>여럿이 모여 하나</code>는 컨테이너 기반으로 네트워크 분산 처리를 구현합니다.</li>
 <li>Apche Arrow 포맷의 학습 데이터를 무한 확장 가능하여 빠른 처리와 지연시간을 최소화할 수 있습니다.</li>
 </ul>
 <img width=200 src="README/arrow-inverse.png" alt="Dense layer">
 </section><section>
-<h2 id="이미지-합성곱-필터httpsgithubcomresearch-notemany-as-onetreemasternnconv-filters-contd"><a href="https://github.com/research-note/Many-as-One/tree/master/nn/conv-filters">이미지 합성곱 필터</a> (cont&rsquo;d)</h2>
+<h4 id="이미지-합성곱-필터">이미지 합성곱 필터</h4>
 <ul>
 <li>filter.hpp에서 편향을 가진 3차원 합성곱 커널을 구현합니다.</li>
 <li>병렬 처리에 최적화한 벡터 기반 텐서를 할당 및 병렬 정규화 처리를 정의합니다.</li>
 </ul>
 </section><section>
-<h2 id="이미지-합성곱-필터httpsgithubcomresearch-notemany-as-onetreemasternnconv-filters-contd-1"><a href="https://github.com/research-note/Many-as-One/tree/master/nn/conv-filters">이미지 합성곱 필터</a> (cont&rsquo;d)</h2>
+<h3 id="이미지-합성곱-필터-contd">이미지 합성곱 필터 (cont&rsquo;d)</h3>
 <ul>
 <li>conv2d_layer.hpp에서 합성곱 레이어를 구현합니다. stride, zero-padding 등을 필터에 적용합니다.</li>
 </ul>
 </section><section>
-<h2 id="이미지-합성곱-필터httpsgithubcomresearch-notemany-as-onetreemasternnconv-filters-contd-2"><a href="https://github.com/research-note/Many-as-One/tree/master/nn/conv-filters">이미지 합성곱 필터</a> (cont&rsquo;d)</h2>
+<h3 id="이미지-합성곱-필터-contd-1">이미지 합성곱 필터 (cont&rsquo;d)</h3>
 <p align="center">
     <img width=500 src="images/multi_map.png" alt="multi map">
 </p>
@@ -62,12 +62,12 @@
 <li>conv2d는 3-D data volume과 필터 벡터를 인자로 받습니다. 하나의 filter는 activation map을 생성합니다. 예를 들어 3 x 3 x 3 필터를 512px x 512px x 3 이미지에 적용하면 (1 stride, 1 zero padding) 512px x 512px 2-D 레이어를 출력합니다.</li>
 </ul>
 </section><section>
-<h2 id="이미지-합성곱-필터httpsgithubcomresearch-notemany-as-onetreemasternnconv-filters"><a href="https://github.com/research-note/Many-as-One/tree/master/nn/conv-filters">이미지 합성곱 필터</a></h2>
+<h3 id="이미지-합성곱-필터-1">이미지 합성곱 필터</h3>
 <ul>
 <li>3개의 이미지에 대해서 배치작업을 실행하면 3개의 필터를 생성합니다. 현재 filter.txt 기반의 예제는 각각의 RGB 컬러 채널에 대해서 에지 디텍터 역할을 합니다.</li>
 </ul>
 </section><section>
-<h2 id="반복자를-통한-병렬-실행-정책">반복자를 통한 병렬 실행 정책</h2>
+<h3 id="반복자를-통한-병렬-실행-정책">반복자를 통한 병렬 실행 정책</h3>
 <ul>
 <li>C++17, C++20의 표준 데이터 타입 컨테이너에 대한 반복자<a href="https://en.cppreference.com/w/cpp/header/execution">std::execution</a>를 활용하여 병렬 실행을 활용합니다.</li>
 <li>기존 C 언어 기반의 자료형을 모던 C++ 벡터 &amp; 연산자 오버로딩으로 구현하였습니다.</li>
@@ -130,8 +130,8 @@ T trans_tensor(F f, T <span style="color:#f92672">&amp;</span>t) {
 </thead>
 <tbody>
 <tr>
-<td align="center"><img src="./images/color/lena.png" alt=""></td>
-<td align="center"><img src="./images/filter/2.bmp" alt=""></td>
+<td align="center"><img src="./images/color/fruits.png" alt=""></td>
+<td align="center"><img src="./images/filter/1.bmp" alt=""></td>
 </tr>
 </tbody>
 </table>

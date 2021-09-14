@@ -6,13 +6,13 @@ weight = 10
 
 # Many as One
 
-매니코어SW 지정과제 [순차처리 합성곱 필터 알고리즘](https://github.com/sshekh/conv-filters)을 [병렬처리 알고리즘](https://github.com/research-note/Many-as-One/tree/master/nn/conv-filters)으로 마이그레이션 했습니다.
+매니코어SW 지정과제 [순차처리 합성곱 필터 알고리즘](https://github.com/sshekh/conv-filters)을 [병렬처리 알고리즘](https://github.com/research-note/Many-as-One/tree/master/nn/conv-filters)으로 재구현 했습니다.
 
 해당 모듈은 `여럿이 모여 하나` 프로젝트에 이미지 모듈에 추가하고 지속적 개선을 진행합니다.
 
 ---
 
-## Many as One (cont'd)
+#### Many as One (cont'd)
 
 `여럿이 모여 하나`는 인공 신경망 코어 프레임워크를 구현합니다.
 
@@ -20,7 +20,7 @@ weight = 10
 
 ---
 
-## Many as One (cont'd)
+#### Many as One (cont'd)
 
 `여럿이 모여 하나`는 매니코어 병렬 처리에 대응하기위해
 
@@ -32,7 +32,7 @@ weight = 10
 
 ---
 
-## Many as One
+#### Many as One
 
 - `여럿이 모여 하나`는 컨테이너 기반으로 네트워크 분산 처리를 구현합니다.
 - Apche Arrow 포맷의 학습 데이터를 무한 확장 가능하여 빠른 처리와 지연시간을 최소화할 수 있습니다.
@@ -41,20 +41,20 @@ weight = 10
 
 ---
 
-## [이미지 합성곱 필터](https://github.com/research-note/Many-as-One/tree/master/nn/conv-filters) (cont'd)
+#### 이미지 합성곱 필터
 
 - filter.hpp에서 편향을 가진 3차원 합성곱 커널을 구현합니다.
 - 병렬 처리에 최적화한 벡터 기반 텐서를 할당 및 병렬 정규화 처리를 정의합니다.
 
 ---
 
-## [이미지 합성곱 필터](https://github.com/research-note/Many-as-One/tree/master/nn/conv-filters) (cont'd)
+### 이미지 합성곱 필터 (cont'd)
 
 - conv2d\_layer.hpp에서 합성곱 레이어를 구현합니다. stride, zero-padding 등을 필터에 적용합니다.
 
 ---
 
-## [이미지 합성곱 필터](https://github.com/research-note/Many-as-One/tree/master/nn/conv-filters) (cont'd)
+### 이미지 합성곱 필터 (cont'd)
 
 <p align="center">
     <img width=500 src="images/multi_map.png" alt="multi map">
@@ -65,13 +65,13 @@ weight = 10
 ---
 
 
-## [이미지 합성곱 필터](https://github.com/research-note/Many-as-One/tree/master/nn/conv-filters)
+### 이미지 합성곱 필터
 
 - 3개의 이미지에 대해서 배치작업을 실행하면 3개의 필터를 생성합니다. 현재 filter.txt 기반의 예제는 각각의 RGB 컬러 채널에 대해서 에지 디텍터 역할을 합니다.
 
 ---
 
-## 반복자를 통한 병렬 실행 정책
+### 반복자를 통한 병렬 실행 정책
 
 - C++17, C++20의 표준 데이터 타입 컨테이너에 대한 반복자[std::execution](https://en.cppreference.com/w/cpp/header/execution)를 활용하여 병렬 실행을 활용합니다.
 - 기존 C 언어 기반의 자료형을 모던 C++ 벡터 & 연산자 오버로딩으로 구현하였습니다.
@@ -129,7 +129,7 @@ Input images               |  Output images
 
 Input images               |  Output images
 :-------------------------:|:-------------------------:
-![](./images/color/lena.png) | ![](./images/filter/2.bmp)
+![](./images/color/fruits.png) | ![](./images/filter/1.bmp)
 
 ---
 
