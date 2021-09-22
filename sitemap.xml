@@ -1,35 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>http://research-note.github.io/many-as-one/</loc>
     <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://research-note.github.io/categories/</loc>
     <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://research-note.github.io/linux-kernel/</loc>
     <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://research-note.github.io/linux-kernel/mm/memory-compaction/</loc>
     <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://research-note.github.io/</loc>
     <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://research-note.github.io/tags/</loc>
     <changefreq>weekly</changefreq>
   </url>
-  
 </urlset>
